@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  title: string = 'todo-app';
+  message: string = "I'm read only!";
+  canEdit: boolean = false;
+
+  onEditClick() {
+    this.canEdit = !this.canEdit;
+    if(this.canEdit) {
+      this.message = 'You can edit me!';
+    } else {
+      this.message = "I'm read only!";
+    }
+  }
 }
